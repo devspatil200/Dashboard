@@ -252,9 +252,9 @@ def fetch_stock(ticker: str):
         stk = yf.Ticker(ticker)
         info = stk.info
         hist = stk.history(period="1y")
-        return stk, info, hist
+        return info, hist
     except Exception as e:
-        return None, {}, pd.DataFrame()
+        return {}, pd.DataFrame()
 
 def safe(d, key, default="N/A"):
     val = d.get(key, default)
