@@ -539,7 +539,7 @@ st.markdown(f"""
   </div>
   <div style='text-align:right;'>
     <div style='font-size:2rem;font-weight:700;color:#111928;'>
-      {currency} {float(price):,.2f if price != "N/A" else "—"}
+      {currency} {f"{float(price):,.2f}" if price != "N/A" else "—"}
     </div>
     <div style='font-size:0.9rem;font-weight:600;color:{chg_color};'>{chg_str}</div>
   </div>
