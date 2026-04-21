@@ -503,8 +503,7 @@ if not selected:
 
 # Fetch data
 with st.spinner(f"Fetching data for **{selected}**…"):
-    stk, info, hist = fetch_stock(selected)
-
+info, hist = fetch_stock(selected)
 if not info or not info.get("regularMarketPrice") and hist.empty:
     st.error(f"❌ Could not fetch data for **{selected}**. Check the ticker symbol and try again.")
     st.stop()
